@@ -2,6 +2,8 @@ import axios from 'axios';
 
 function getData() {
 
+    const user_id = 2;
+    
     const getUserData = (user_id) => {
         return new Promise(async (resolve, reject) => {
             const { data: users } = await axios(
@@ -24,10 +26,10 @@ function getData() {
     };
     async function start() {
         try {
-            const user_id_list = 1;
-            const users = await getUserData(user_id_list);
+            
+            const users = await getUserData(user_id);
 
-            const post = await getPost(user_id_list);
+            const post = await getPost(user_id);
 
             console.log([users,'Posts: ',post]);
             //console.log(post);
